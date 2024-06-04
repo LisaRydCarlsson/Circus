@@ -1,0 +1,14 @@
+@import "src/styling/general.scss";
+
+.marquee {
+	width: clamp(300px, 90vw, 1440px);
+	overflow: hidden;
+	white-space: nowrap;
+	background-color: $gold-details-shadow;
+	margin-bottom: 4rem;
+}
+
+.marquee__span {
+	display: inline-block;
+	white-space: nowrap;
+}

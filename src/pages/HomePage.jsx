@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import ReadMore from "../components/ReadMore";
-import Carousel from "react-bootstrap/Carousel";
+import CarouselComponent from "../components/Carousel";
+import Marquee from "../components/Marquee";
 import carouselMask from "../assets/img/events-carousel-mask.jpg";
 import carouselCarousel from "../assets/img/events-carousel-carousel.jpg";
 import carouselCar from "../assets/img/events-carousel-car.jpg";
@@ -35,22 +36,12 @@ const HomePage = () => {
 		<main className="scrollable-content">
 			<div className="events">
 				<Header />
-				<Carousel
-					activeIndex={index}
-					onSelect={handleSelect}
-					interval={3000} // Lägg till detta
-					className="events__carousel-container"
-				>
-					{images.map((image, idx) => (
-						<Carousel.Item key={idx}>
-							<img
-								className="d-block w-100 events__carousel-image"
-								src={image}
-								alt={`Slide ${idx}`}
-							/>
-						</Carousel.Item>
-					))}
-				</Carousel>
+				<CarouselComponent
+					images={images}
+					index={index}
+					handleSelect={handleSelect}
+				/>
+				<Marquee />
 				<div className="events__book-ticket">
 					<h5>BOOK YOUR TICKET HERE</h5>
 					<button className="glow-btn">Select date</button>
@@ -121,13 +112,6 @@ const HomePage = () => {
 					<div className="events__restaurants__text">
 						<h3>Savor the flavorS</h3>
 						<h5>your culinary adventure awaits</h5>
-
-						{/* <p>
-							Indulge your taste buds in a gastronomic journey through our park.
-							From savory treats to sweet delights, our food stalls and
-							restaurants offer a feast for every palate. Discover a world of
-							flavors that will leave you craving for more.
-						</p> */}
 						<p>
 							Indulge your taste buds in a gastronomic journey through our park.
 							From savory treats to sweet delights, our food stalls and
