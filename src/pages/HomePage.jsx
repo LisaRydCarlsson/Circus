@@ -53,8 +53,8 @@ const HomePage = () => {
 				</Carousel>
 				<div className="events__book-ticket">
 					<h5>BOOK YOUR TICKET HERE</h5>
-					<button className="glow-btn">Pick date</button>
-					<button className="glow-btn">Buy ticket</button>
+					<button className="glow-btn">Select date</button>
+					<button className="glow-btn">Buy your ticket</button>
 				</div>
 				<div className="events__kids">
 					<h3>Kids carnival lanD</h3>
@@ -113,7 +113,7 @@ const HomePage = () => {
 							laughter, and amazement. Join us for a celebration of talent and
 							creativity, where the stage comes alive with wonder.
 						</p>
-						<button className="glow-btn">See the show</button>
+						<button className="glow-btn">Explore the shows</button>
 					</div>
 				</div>
 				<div className="line"></div>
@@ -171,14 +171,11 @@ const HomePage = () => {
 				<div className="line"></div>
 				<div className="events__book-ticket">
 					<h5>BOOK YOUR TICKET HERE</h5>
-					<button className="glow-btn">Pick date</button>
-					<button className="glow-btn">Buy ticket</button>
+					<button className="glow-btn">Select date</button>
+					<button className="glow-btn">Buy your ticket</button>
 				</div>
 			</div>
 			<div className="space"></div>
-			<Link to="/">
-				<button>Go Back</button>
-			</Link>
 		</main>
 	);
 };

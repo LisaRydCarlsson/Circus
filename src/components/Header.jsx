@@ -16,11 +16,11 @@ const Header = () => {
 						ATTRACTIONS
 					</NavLink>
 					<NavLink
-						to="/games"
+						to="/casino"
 						className="header__links--small"
 						activeClassName="active"
 					>
-						GAMES
+						CASINO
 					</NavLink>
 					<NavLink
 						to="/shows"

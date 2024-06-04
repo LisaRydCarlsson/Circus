@@ -6,7 +6,7 @@ import InfoPage from "./pages/InfoPage";
 import AttractionsPage from "./pages/AttractionsPage";
 import FoodDrinkPage from "./pages/FoodDrinkPage";
 import ShowsPage from "./pages/ShowsPage";
-import GamesPage from "./pages/GamesPage";
+import CasinoPage from "./pages/CasinoPage";
 import OrderPage from "./pages/OrderPage";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
 				<Route path="/attractions" element={<AttractionsPage />} />
 				<Route path="/food-drink" element={<FoodDrinkPage />} />
 				<Route path="/shows" element={<ShowsPage />} />
-				<Route path="/games" element={<GamesPage />} />
+				<Route path="/casino" element={<CasinoPage />} />
 				<Route path="/order" element={<OrderPage />} />
 			</Routes>
 		</Router>
