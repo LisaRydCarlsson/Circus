@@ -1,0 +1,261 @@
+$bg-color: #000000;
+$primary-detail-color: #ffffff;
+$gold-details-shadow: #8c7752;
+$light-gold-details-shadow: #827258;
+$cerice-details: #e908d6;
+$pink-detail: #f0629f;
+$purple-detail: #ad5ff4;
+$orange-detail: #f78410;
+$yellow-detail: #fbc608;
+$bluedetail: #3064fe;
+$green-detail: #18c8e6;
+
+@font-face {
+	font-family: "CarnevaleeFreakshow";
+	src: url("/fonts/carnevalee_freakshow-webfont.woff2") format("woff2"),
+		url("/fonts/CarnevaleeFreakshow.woff") format("woff");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap");
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	cursor: url("../assets/icons/wand-cursor.png"), auto;
+}
+
+:root {
+	cursor: url("../assets/icons/wand-cursor.png"), auto;
+}
+
+body {
+	overflow: hidden;
+	background-color: $bg-color;
+	color: $primary-detail-color;
+	font-family: "CarnevaleeFreakshow";
+	cursor: url("../assets/icons/wand-cursor.png"), auto;
+}
+
+main {
+	width: clamp(300px, 90vw, 1440px);
+	height: auto;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.scrollable-content {
+	overflow-y: scroll;
+	height: 100vh;
+}
+
+h1 {
+	font-size: 23rem;
+	letter-spacing: 0.5rem;
+	margin-top: -4rem;
+	text-shadow: 4px 4px 0px #000, -4px 0 0px #000, 7px 4px 0 $gold-details-shadow;
+}
+
+h2 {
+	margin-top: -20rem;
+	font-size: 8rem;
+	letter-spacing: 0.3rem;
+	text-shadow: 4px 4px 0px #000, -4px 0 0px #000, 7px 4px 0 $gold-details-shadow;
+}
+
+h3 {
+	font-size: clamp(2rem, 8vw, 7.5rem);
+	letter-spacing: 0.3rem;
+	text-shadow: 2px 2px 0px #000, -2px 0 0px #000, 4px 3px 0 $gold-details-shadow;
+}
+
+h4 {
+	font-size: clamp(2rem, 7vw, 7rem);
+	letter-spacing: 0.3rem;
+	text-shadow: 2px 2px 0px #000, -2px 0 0px #000, 4px 3px 0 $gold-details-shadow;
+}
+
+h5 {
+	font-size: clamp(1.5rem, 4vw, 3rem);
+	text-align: center;
+	letter-spacing: 0.3rem;
+	text-shadow: 2px 2px 0px #000, -2px 0 0px #000, 4px 3px 0 $gold-details-shadow;
+	padding-bottom: 1rem;
+}
+
+p {
+	font-family: "Lusitana", serif;
+	font-size: clamp(1rem, 2vw, 1.75rem);
+	font-weight: 400;
+	letter-spacing: clamp(0.05rem, 0.5vw, 0.1rem);
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	text-align: justify;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+
+	&:hover {
+		cursor: url("../assets/icons/wand-cursor.png"), auto;
+	}
+}
+
+button {
+	font-family: "Lusitana", serif;
+	font-size: clamp(1rem, 2vw, 1.75rem);
+	width: clamp(6rem, 20vw, 16rem);
+	border: solid 1px $gold-details-shadow;
+	border-radius: 0.5rem;
+	background-color: transparent;
+	color: $primary-detail-color;
+	letter-spacing: clamp(0.05rem, 0.5vw, 0.1rem);
+	padding: 1rem;
+
+	&:hover {
+		background: linear-gradient(transparent, $gold-details-shadow);
+		transition: background 0.5s;
+		color: $bg-color;
+		cursor: url("../assets/icons/wand-cursor.png"), auto;
+	}
+}
+
+.space {
+	height: 5rem;
+}
+
+.glow-btn {
+	width: clamp(6rem, 20vw, 16rem);
+	border: solid 1px $gold-details-shadow;
+	border: solid 1px $gold-details-shadow;
+	outline: none;
+	color: $primary-detail-color;
+	background: #000;
+	cursor: url("../assets/icons/wand-cursor.png"), auto;
+	position: relative;
+	z-index: 0;
+	transition: 0.5s ease-in-out;
+	margin-top: 2rem;
+
+	&:before {
+		content: "";
+		background: linear-gradient(
+			45deg,
+			#ff0000,
+			#fff700,
+			#ff7000,
+			#ff00fe,
+			#3ff4eb,
+			#9e00ff,
+			#00beff,
+			#ff00dd,
+			#ff0000
+		);
+		position: absolute;
+		top: -2px;
+		left: -2px;
+		background-size: 400%;
+		z-index: -1;
+		filter: blur(10px);
+		width: calc(100% + 4px);
+		height: calc(100% + 4px);
+		animation: glowing 20s linear infinite;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
+
+	&:active {
+		color: $gold-details-shadow;
+	}
+
+	&:active:after {
+		background: transparent;
+	}
+
+	&:hover {
+		transform: scale(1.05);
+		color: $primary-detail-color;
+	}
+
+	&:hover:before {
+		opacity: 1;
+	}
+
+	&:after {
+		z-index: -1;
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		left: 0;
+		top: 0;
+	}
+
+	&:before,
+	&:after {
+		border-radius: 0.5rem;
+	}
+}
+
+@keyframes glowing {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.line {
+	border: solid 1px $gold-details-shadow;
+	margin: 7rem 0;
+}
+
+hr {
+	border: none;
+	height: 10px;
+	position: relative;
+	margin: 4rem 0;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $primary-detail-color;
+	}
+}
+
+.read-more {
+	text-align: left;
+
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
+
+	&__link {
+		color: $gold-details-shadow;
+		font-family: "Lusitana", serif;
+		font-size: clamp(1rem, 2vw, 1.5rem);
+		letter-spacing: clamp(0.05rem, 0.5vw, 0.1rem);
+		line-height: clamp(0.3rem, 5vw, 5rem);
+		padding-bottom: 2rem;
+		cursor: url("../assets/icons/wand-cursor.png"), auto;
+	}
+
+	&__content {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 1s ease-in-out;
+	}
+
+	&__content.expanded {
+		max-height: 7rem;
+	}
+}

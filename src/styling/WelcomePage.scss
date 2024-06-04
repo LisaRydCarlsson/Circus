@@ -1,0 +1,147 @@
+@import "src/styling/general.scss";
+
+#home-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+}
+
+#enter {
+	background-image: url(../assets/img/home-entrance.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	transform-origin: center bottom;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+#welcome,
+#header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.button-container {
+	font-size: 2rem;
+	border: $gold-details-shadow solid 2px;
+	border-radius: 0.5rem;
+	padding: 1.5rem 0rem;
+	width: 15rem;
+	opacity: 0;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	transition: color 0.5s ease-in-out;
+	color: $primary-detail-color;
+	background: linear-gradient(transparent, transparent);
+	box-shadow: 4px 4px 0px #000, -4px 0 0px #000, 5px 5px 0 $primary-detail-color;
+}
+
+.button-container:hover {
+	background: linear-gradient(transparent, $gold-details-shadow);
+	transition: background 0.5s;
+	color: $bg-color;
+	cursor: url("../assets/icons/wand-cursor.png"), auto;
+}
+
+.button-link {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.button-link:hover .button-text {
+	color: $bg-color;
+	cursor: url("../assets/icons/wand-cursor.png"), auto;
+}
+
+/* EVENTS */
+
+#event-container {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#event {
+	background-image: url(/images/entrance_original_72px.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	transform-origin: center bottom;
+	position: absolute;
+	max-width: 100%;
+	max-height: 100%;
+	opacity: 0;
+}
+
+//ARKIV
+
+/* #enter-btn {
+  font-size: 2rem;
+  border: var(--gold-details-shadow) solid 2px;
+  border-radius: 0.5rem;
+  padding: 1.5rem 0rem;
+  width: 15rem;
+  text-align: center;
+  opacity: 0;
+  background-color: #000000;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 
+    4px 4px 0px #000, 
+    -4px 0 0px #000,
+    5px 5px 0 var(--primary-detail-color);
+}
+
+#enter-btn:hover {
+  background-color: var(--gold-details-shadow);
+  color: var(--bg-color);
+} */
+
+// .button-container {
+// 	font-size: 2rem;
+// 	border: var(--gold-details-shadow) solid 2px;
+// 	border-radius: 0.5rem;
+// 	padding: 1.5rem 0rem;
+// 	width: 15rem;
+// 	opacity: 0;
+// 	text-align: center;
+// 	position: relative;
+// 	overflow: hidden;
+// 	transition: color 0.5s ease-in-out;
+// 	color: var(--primary-detail-color);
+// 	background: linear-gradient(transparent, transparent);
+// 	box-shadow: 4px 4px 0px #000, -4px 0 0px #000,
+// 		5px 5px 0 var(--primary-detail-color);
+// }
+
+// .button-container:hover {
+// 	background: linear-gradient(
+// 		transparent,
+// 		var(--gold-details-shadow)
+// 	); /* Add a gradient background on hover */
+// 	transition: background 0.5s; /* Transition the background color */
+// 	color: var(--bg-color); /* Change text color on hover */
+// }

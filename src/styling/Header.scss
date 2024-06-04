@@ -1,0 +1,50 @@
+@import "src/styling/general.scss";
+
+.header {
+	position: absolute;
+	width: clamp(300px, 90vw, 1440px);
+	margin: 0 auto;
+	background-color: transparent;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem 2rem;
+
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	&__title {
+		text-align: center;
+
+		h4 {
+			line-height: 3rem;
+		}
+	}
+
+	&__links {
+		&--small {
+			font-family: "Lusitana", serif;
+			font-size: clamp(1rem, 2vw, 1.5rem);
+			font-weight: 400;
+			text-shadow: 2px 2px 0px #3e3e3e;
+			letter-spacing: clamp(0.05rem, 0.5vw, 0.1rem);
+			line-height: 7rem;
+			display: inline-block;
+			padding: 1rem;
+		}
+
+		.active {
+			color: $gold-details-shadow;
+		}
+	}
+
+	a {
+		h4 {
+			line-height: 3rem;
+		}
+	}
+}
