@@ -4,6 +4,7 @@ import React, { useState } from "react";
 const Footer = () => {
 	return (
 		<main>
+			<div className="footer-line"></div>
 			<div className="footer">
 				<div className="footer__left">
 					<p className="footer__text">About the Circus</p>

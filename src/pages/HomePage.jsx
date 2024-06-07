@@ -159,7 +159,6 @@ const HomePage = () => {
 					<button className="glow-btn">Select date</button>
 					<button className="glow-btn">Buy your ticket</button>
 				</div>
-				<div className="line"></div>
 			</div>
 			<Footer />
 		</main>

@@ -49,6 +49,15 @@ main {
 	height: 100vh;
 }
 
+.construction-page {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	overflow: visible;
+	padding-top: clamp(12rem, 30vh, 25rem);
+}
+
 h1,
 h2,
 h3,
@@ -128,14 +137,6 @@ button {
 		color: $bg-color;
 		cursor: url("../assets/icons/wand-cursor.png"), auto;
 	}
-}
-
-.space {
-	height: 5rem;
-}
-
-.row-space {
-	margin-right: 2rem;
 }
 
 .glow-btn {
@@ -222,6 +223,14 @@ button {
 	100% {
 		background-position: 0 0;
 	}
+}
+
+.space {
+	height: 5rem;
+}
+
+.row-space {
+	margin-right: 2rem;
 }
 
 .line {

@@ -33,7 +33,7 @@
 	&__text,
 	&__centered-text {
 		font-family: "Lusitana", serif;
-		font-size: clamp(0.8rem, 1.25vw, 1.5rem);
+		font-size: clamp(0.5rem, 1vw, 1rem);
 		font-weight: 400;
 		color: $gold-details-shadow;
 		letter-spacing: clamp(0.05rem, 0.5vw, 0.1rem);
@@ -45,10 +45,15 @@
 	&__centered-text {
 		display: flex;
 		justify-content: center;
-		margin-bottom: 5rem;
+		margin-bottom: 3rem;
 
 		p {
 			font-size: clamp(1rem, 1.1vw, 1.1rem);
 		}
 	}
+}
+
+.footer-line {
+	border: solid 1px $gold-details-shadow;
+	margin: 7rem 0 3rem 0;
 }

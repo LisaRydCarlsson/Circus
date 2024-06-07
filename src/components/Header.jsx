@@ -1,84 +1,46 @@
-// import "../styling/Header.scss";
-// import React from "react";
-// import { NavLink, Link } from "react-router-dom";
-
-// const Header = () => {
-// 	return (
-// 		<header className="header">
-// 			<nav className="header__nav">
-// 				<div className="header__links">
-// 					<NavLink
-// 						to="/attractions"
-// 						className="header__links--small"
-// 						activeClassName="active"
-// 					>
-// 						ATTRACTIONS
-// 					</NavLink>
-// 					<NavLink
-// 						to="/casino"
-// 						className="header__links--small"
-// 						activeClassName="active"
-// 					>
-// 						CASINO
-// 					</NavLink>
-// 					<NavLink
-// 						to="/shows"
-// 						className="header__links--small"
-// 						activeClassName="active"
-// 					>
-// 						SHOWS
-// 					</NavLink>
-// 				</div>
-// 				<Link to="/home" className="leader__links--large">
-// 					<h5>welcome to the</h5>
-// 					<h4>CircuS</h4>
-// 				</Link>
-// 				<div className="header__links">
-// 					<NavLink
-// 						to="/food-drink"
-// 						className="header__links--small"
-// 						activeClassName="active"
-// 					>
-// 						FOOD & DRINK
-// 					</NavLink>
-// 					<NavLink
-// 						to="/info"
-// 						className="header__links--small"
-// 						activeClassName="active"
-// 					>
-// 						INFO
-// 					</NavLink>
-// 					<NavLink
-// 						to="/order"
-// 						className="header__links--small"
-// 						activeClassName="active"
-// 					>
-// 						TICKETS
-// 					</NavLink>
-// 				</div>
-// 			</nav>
-// 		</header>
-// 	);
-// };
-
-// export default Header;
-
 import "../styling/Header.scss";
-import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, Link, useLocation } from "react-router-dom";
 
 const Header = () => {
+	const location = useLocation();
+	const [shouldAnimate, setShouldAnimate] = useState(false);
+	const [isHome, setIsHome] = useState(location.pathname === "/home");
+
+	useEffect(() => {
+		if (location.pathname === "/home") {
+			setShouldAnimate(true);
+			setIsHome(true);
+		} else {
+			setShouldAnimate(false);
+			setIsHome(false);
+		}
+	}, [location]);
+
 	return (
 		<header className="header">
 			<nav className="header__nav">
-				<div className="header__nav--left">
-					<NavLink to="/attractions" activeClassName="active">
+				<div
+					className={`header__nav--left ${
+						shouldAnimate ? "animate" : "visible"
+					}`}
+				>
+					<NavLink
+						to="/attractions"
+						className={({ isActive }) => (isActive ? "active" : "")}
+					>
 						ATTRACTIONS
 					</NavLink>
-					<NavLink to="/casino" activeClassName="active">
+					<NavLink
+						to="/casino"
+						className={({ isActive }) => (isActive ? "active" : "")}
+					>
 						CASINO
 					</NavLink>
-					<NavLink to="/shows" activeClassName="active">
+					<NavLink
+						to="/shows"
+						className={({ isActive }) => (isActive ? "active" : "")}
+					>
 						SHOWS
 					</NavLink>
 				</div>
@@ -88,14 +50,27 @@ const Header = () => {
 						<h4>CircuS</h4>
 					</Link>
 				</div>
-				<div className="header__nav--right">
-					<NavLink to="/food-drink" activeClassName="active">
+				<div
+					className={`header__nav--right ${
+						shouldAnimate ? "animate" : "visible"
+					}`}
+				>
+					<NavLink
+						to="/food-drink"
+						className={({ isActive }) => (isActive ? "active" : "")}
+					>
 						FOOD & DRINK
 					</NavLink>
-					<NavLink to="/info" activeClassName="active">
+					<NavLink
+						to="/info"
+						className={({ isActive }) => (isActive ? "active" : "")}
+					>
 						INFO
 					</NavLink>
-					<NavLink to="/order" activeClassName="active">
+					<NavLink
+						to="/order"
+						className={({ isActive }) => (isActive ? "active" : "")}
+					>
 						TICKETS
 					</NavLink>
 				</div>
@@ -105,81 +80,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// import "../styling/Header.scss";
-// import React, { useState } from "react";
-// import { NavLink, Link } from "react-router-dom";
-
-// const Header = () => {
-// 	const [showLinks, setShowLinks] = useState(false);
-
-// 	const toggleLinks = () => {
-// 		setShowLinks(!showLinks);
-// 	};
-
-// 	return (
-// 		<header className="header">
-// 			<nav className="header__nav">
-// 				<button onClick={toggleLinks} className="menu-button">
-// 					MENU
-// 				</button>
-// 				<Link to="/home" className="leader__links--large">
-// 					<h5>welcome to the</h5>
-// 					<h4>CircuS</h4>
-// 				</Link>
-// 				{showLinks && (
-// 					<>
-// 						<div className="header__links--left">
-// 							<NavLink
-// 								to="/attractions"
-// 								className="header__links--small"
-// 								activeClassName="active"
-// 							>
-// 								ATTRACTIONS
-// 							</NavLink>
-// 							<NavLink
-// 								to="/casino"
-// 								className="header__links--small"
-// 								activeClassName="active"
-// 							>
-// 								CASINO
-// 							</NavLink>
-// 							<NavLink
-// 								to="/shows"
-// 								className="header__links--small"
-// 								activeClassName="active"
-// 							>
-// 								SHOWS
-// 							</NavLink>
-// 						</div>
-// 						<div className="header__links--right">
-// 							<NavLink
-// 								to="/food-drink"
-// 								className="header__links--small"
-// 								activeClassName="active"
-// 							>
-// 								FOOD & DRINK
-// 							</NavLink>
-// 							<NavLink
-// 								to="/info"
-// 								className="header__links--small"
-// 								activeClassName="active"
-// 							>
-// 								INFO
-// 							</NavLink>
-// 							<NavLink
-// 								to="/order"
-// 								className="header__links--small"
-// 								activeClassName="active"
-// 							>
-// 								TICKETS
-// 							</NavLink>
-// 						</div>
-// 					</>
-// 				)}
-// 			</nav>
-// 		</header>
-// 	);
-// };
-
-// export default Header;
