@@ -2,6 +2,7 @@ import "../styling/HomePage.scss";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import ReadMore from "../components/ReadMore";
 import CarouselComponent from "../components/Carousel";
 import Marquee from "../components/Marquee";
@@ -158,8 +159,9 @@ const HomePage = () => {
 					<button className="glow-btn">Select date</button>
 					<button className="glow-btn">Buy your ticket</button>
 				</div>
+				<div className="line"></div>
 			</div>
-			<div className="space"></div>
+			<Footer />
 		</main>
 	);
 };

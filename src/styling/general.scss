@@ -33,7 +33,7 @@ body {
 	overflow: hidden;
 	background-color: $bg-color;
 	color: $primary-detail-color;
-	font-family: "CarnevaleeFreakshow";
+	font-family: "Lusitana", serif;
 	cursor: url("../assets/icons/wand-cursor.png"), auto;
 }
 
@@ -47,6 +47,15 @@ main {
 .scrollable-content {
 	overflow-y: scroll;
 	height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: "CarnevaleeFreakshow";
+	text-align: center;
 }
 
 h1 {
@@ -85,7 +94,6 @@ h5 {
 
 p,
 span {
-	font-family: "Lusitana", serif;
 	font-size: clamp(1rem, 2vw, 1.75rem);
 	font-weight: 400;
 	letter-spacing: clamp(0.05rem, 0.5vw, 0.1rem);

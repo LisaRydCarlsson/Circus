@@ -7,44 +7,206 @@
 	background-color: transparent;
 	z-index: 1000;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	padding: 1rem 2rem;
 
 	&__nav {
-		display: flex;
-		justify-content: space-between;
+		position: relative;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
 		width: 100%;
-	}
+		height: 100%;
+		align-items: center;
 
-	&__title {
-		text-align: center;
+		&--left,
+		&--right {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			height: 100%;
+			visibility: hidden;
+			animation: slideDown 2s ease-out 2s forwards;
 
-		h4 {
-			line-height: 3rem;
+			a {
+				font-size: clamp(1rem, 1.25vw, 1.5rem);
+				letter-spacing: clamp(0.05rem, 0.5vw, 0.1rem);
+				text-shadow: 2px 2px 0px #3e3e3e;
+				white-space: nowrap;
+				margin: 0 5%;
+				display: inline-block;
+			}
 		}
-	}
 
-	&__links {
-		&--small {
-			font-family: "Lusitana", serif;
-			font-size: clamp(1rem, 2vw, 1.5rem);
-			font-weight: 400;
-			text-shadow: 2px 2px 0px #3e3e3e;
-			letter-spacing: clamp(0.05rem, 0.5vw, 0.1rem);
-			line-height: 7rem;
-			display: inline-block;
-			padding: 1rem;
+		@keyframes slideDown {
+			0% {
+				transform: translateY(-100%);
+				opacity: 0;
+				visibility: visible;
+			}
+			100% {
+				transform: translateY(0);
+				opacity: 1;
+				visibility: visible;
+			}
 		}
 
-		.active {
-			color: $gold-details-shadow;
+		&--left {
+			grid-column: 1;
 		}
-	}
 
-	a {
-		h4 {
-			line-height: 3rem;
+		&--center {
+			grid-column: 2;
+
+			h4 {
+				line-height: 2.5rem;
+			}
+		}
+
+		&--right {
+			grid-column: 3;
 		}
 	}
 }
+
+// @import "src/styling/general.scss";
+
+// .header {
+// 	position: absolute;
+// 	width: clamp(300px, 90vw, 1440px);
+// 	margin: 0 auto;
+// 	background-color: transparent;
+// 	z-index: 1000;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	padding: 1rem 2rem;
+
+// 	&__nav {
+// 		display: flex;
+// 		justify-content: space-between;
+// 		width: 100%;
+// 	}
+
+// 	&__title {
+// 		text-align: center;
+
+// 		h4 {
+// 			line-height: 3rem;
+// 		}
+// 	}
+
+// 	&__links {
+// 		&--small {
+// 			font-family: "Lusitana", serif;
+// 			font-size: clamp(1rem, 2vw, 1.5rem);
+// 			font-weight: 400;
+// 			text-shadow: 2px 2px 0px #3e3e3e;
+// 			letter-spacing: clamp(0.05rem, 0.5vw, 0.1rem);
+// 			line-height: 7rem;
+// 			display: inline-block;
+// 			padding: 1rem;
+// 		}
+
+// 		.active {
+// 			color: $gold-details-shadow;
+// 		}
+// 	}
+
+// 	a {
+// 		h4 {
+// 			line-height: 3rem;
+// 		}
+// 	}
+// }
+
+// .header {
+// 	position: absolute;
+// 	width: clamp(300px, 90vw, 1440px);
+// 	margin: 0 auto;
+// 	background-color: transparent;
+// 	z-index: 1000;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	padding: 1rem 2rem;
+
+// 	&__nav {
+// 		position: relative;
+// 		display: grid;
+// 		grid-template-columns: repeat(3, 1fr);
+// 		width: 100%;
+// 		height: 100%;
+// 		justify-content: space-between;
+// 	}
+
+// 	.menu-button {
+// 		grid-column: 1 / 2;
+// 		font-family: "Lusitana", serif;
+// 		font-size: clamp(1rem, 2vw, 1.5rem);
+// 		font-weight: 400;
+// 		text-shadow: 2px 2px 0px #3e3e3e;
+// 		letter-spacing: clamp(0.05rem, 0.5vw, 0.1rem);
+// 		line-height: 7rem;
+// 		display: inline-block;
+// 		padding: 1rem;
+// 		position: absolute;
+// 		top: 0;
+// 	}
+
+// 	.leader__links--large {
+// 		grid-column: 2 / 3;
+// 		display: flex;
+// 		flex-direction: column;
+// 		justify-content: center;
+// 		align-items: center;
+// 	}
+
+// 	&__links--left,
+// 	&__links--right {
+// 		position: absolute;
+// 		display: flex;
+// 		align-items: center;
+// 		// justify-content: center;
+// 		height: 100%;
+
+// 		a {
+// 			margin: 0 5%;
+// 			white-space: nowrap;
+// 		}
+// 	}
+
+// 	&__links--left {
+// 		grid-column: 1 / 2;
+// 		// justify-content: center;
+// 	}
+
+// 	&__links--right {
+// 		grid-column: 3 / 4;
+// 		// justify-content: flex-start;
+// 	}
+
+// 	.header__links--left,
+// 	.header__links--right {
+// 		.header__links--small {
+// 			font-family: "Lusitana", serif;
+// 			font-size: clamp(1rem, 1.25vw, 1.5rem);
+// 			font-weight: 400;
+// 			text-shadow: 2px 2px 0px #3e3e3e;
+// 			letter-spacing: clamp(0.05rem, 0.5vw, 0.1rem);
+// 			line-height: 7rem;
+// 			display: inline-block;
+// 			// padding: 1rem;
+// 			white-space: nowrap; // Förhindrar att texten bryts till en ny rad
+// 		}
+
+// 		.active {
+// 			color: $gold-details-shadow;
+// 		}
+// 	}
+
+// 	a {
+// 		h4 {
+// 			line-height: 3rem;
+// 		}
+// 	}
+// }

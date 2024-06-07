@@ -1,0 +1,54 @@
+@import "src/styling/general.scss";
+
+.footer {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin-bottom: 3rem;
+
+	&__left,
+	&__center,
+	&__right {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__left {
+		p {
+			text-align: left;
+		}
+	}
+
+	&__center {
+		p {
+			text-align: center;
+		}
+	}
+
+	&__right {
+		p {
+			text-align: right;
+		}
+	}
+
+	&__text,
+	&__centered-text {
+		font-family: "Lusitana", serif;
+		font-size: clamp(0.8rem, 1.25vw, 1.5rem);
+		font-weight: 400;
+		color: $gold-details-shadow;
+		letter-spacing: clamp(0.05rem, 0.5vw, 0.1rem);
+		line-height: 0rem;
+		display: inline-block;
+		padding: 1rem;
+	}
+
+	&__centered-text {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 5rem;
+
+		p {
+			font-size: clamp(1rem, 1.1vw, 1.1rem);
+		}
+	}
+}
