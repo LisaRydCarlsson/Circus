@@ -6,7 +6,7 @@ const CarouselComponent = ({ images, index, handleSelect }) => (
 	<Carousel
 		activeIndex={index}
 		onSelect={handleSelect}
-		interval={5000}
+		interval={2500}
 		fade
 		className="events__carousel-container"
 	>
