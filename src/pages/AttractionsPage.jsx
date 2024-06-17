@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ReadMore from "../components/ReadMore";
+import HeaderImg from "../assets/img/attractions-header.jpg";
 import Carousel from "../assets/img/attractions-whirling-wonder.jpg";
 import RollerCoaster from "../assets/img/attractions-iron-cyclone.jpg";
 import Steamboat from "../assets/img/attractions-steamboat-rumble.jpg";
@@ -19,7 +20,10 @@ const AttractionsPage = () => {
 		<main className="scrollable-content">
 			<div className="attractions">
 				<Header />
-
+				<div className="attractions__header-container">
+					<img src={HeaderImg} alt="Vintage Carousel" />
+					<h3>AttractionS</h3>
+				</div>
 				<div className="attractions__square-container">
 					<div className="attractions__square">
 						<div className="attractions__square__content">
@@ -98,6 +102,23 @@ const AttractionsPage = () => {
 							</div>
 							<h6>skyline spinner</h6>
 						</div>
+					</div>
+				</div>
+				<div className="line"></div>
+				<div className="attractions__kids-carnival">
+					<div className="attractions__kids-carnival__img-container">
+						<h3>Kids carnival lanD</h3>
+						<h5>magical moments await!</h5>
+					</div>
+					<div className="attractions__kids-carnival__text-container">
+						<p>
+							Step into the enchanting world of our Kid's Carnival Wonderland!
+							Delight in whimsical rides, captivating shows, and exciting games
+							designed just for the little ones. From sweet treats to joyous
+							laughter, every corner is a haven of childlike wonder. Bring the
+							whole family and create cherished memories together.
+						</p>
+						<button className="glow-btn">Join the fun</button>
 					</div>
 				</div>
 				<div className="line"></div>

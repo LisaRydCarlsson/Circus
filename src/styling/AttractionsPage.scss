@@ -4,8 +4,14 @@
 	width: clamp(300px, 90vw, 1440px);
 	margin: 0 auto;
 
+	&__header-container {
+		h3 {
+			margin-top: 3rem;
+		}
+	}
+
 	&__square-container {
-		padding-top: clamp(10rem, 24vh, 20rem);
+		padding-top: clamp(1rem, 2.5vh, 2rem);
 		padding-left: clamp(1rem, 2vh, 2rem);
 		padding-right: clamp(1rem, 2vh, 2rem);
 		display: grid;
@@ -49,7 +55,8 @@
 		}
 	}
 
-	&__freight-fest {
+	&__freight-fest,
+	&__kids-carnival {
 		margin-bottom: 4rem;
 
 		&__img-container {
@@ -57,8 +64,6 @@
 			flex-direction: column;
 			justify-content: flex-end;
 			height: 70vh;
-			background: url(../assets/img/attractions-freight-fest.jpg) no-repeat
-				center center/cover;
 
 			h3 {
 				line-height: 7rem;
@@ -71,7 +76,29 @@
 		}
 
 		&__text-container {
-			padding: 0 4rem;
+			padding: 2rem 4rem 0 4rem;
+		}
+	}
+
+	&__freight-fest {
+		&__img-container {
+			background: url(../assets/img/attractions-freight-fest.jpg) no-repeat
+				center center/cover;
+		}
+	}
+
+	&__kids-carnival {
+		&__img-container {
+			background: url(../assets/img/attractions-kids-carnival.jpg) no-repeat
+				center center/cover;
+
+			h3 {
+				margin-bottom: 0;
+			}
+
+			h5 {
+				margin-bottom: 2rem;
+			}
 		}
 	}
 
@@ -82,7 +109,7 @@
 	.single-image-container {
 		position: fixed;
 		top: 0;
-		left: 0;
+		left: -1rem;
 		right: 0;
 		bottom: 0;
 		display: flex;
