@@ -1,0 +1,100 @@
+@import "general.scss";
+
+.attractions {
+	width: clamp(300px, 90vw, 1440px);
+	margin: 0 auto;
+
+	&__square-container {
+		padding-top: clamp(10rem, 24vh, 20rem);
+		padding-left: clamp(1rem, 2vh, 2rem);
+		padding-right: clamp(1rem, 2vh, 2rem);
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: clamp(1rem, 3vw, 3rem);
+		margin-bottom: 10rem;
+	}
+
+	&__square {
+		padding: 1.5rem;
+		border: solid 1px $gold-details-shadow;
+		border-radius: 0.5rem;
+
+		&__content {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			text-decoration: none;
+			position: relative;
+
+			.image-container {
+				width: 100%;
+				aspect-ratio: 1 / 1;
+				position: relative;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
+
+		h6 {
+			padding: 1.5rem 0;
+		}
+	}
+
+	&__freight-fest {
+		margin-bottom: 4rem;
+
+		&__img-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			height: 70vh;
+			background: url(../assets/img/attractions-freight-fest.jpg) no-repeat
+				center center/cover;
+
+			h3 {
+				line-height: 7rem;
+				padding-bottom: 2rem;
+			}
+
+			h5 {
+				line-height: 0rem;
+			}
+		}
+
+		&__text-container {
+			padding: 0 4rem;
+		}
+	}
+
+	.back-btn {
+		margin: 8rem 0 2rem 0;
+	}
+
+	.single-image-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 1000;
+
+		img {
+			max-width: 80%;
+			max-height: 80%;
+			object-fit: cover;
+		}
+	}
+}

@@ -47,6 +47,10 @@ main {
 .scrollable-content {
 	overflow-y: scroll;
 	height: 100vh;
+	width: 100vw;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
 }
 
 .construction-page {
@@ -62,13 +66,15 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
 	font-family: "CarnevaleeFreakshow";
 	text-align: center;
+	white-space: nowrap;
 }
 
 h1 {
-	font-size: 23rem;
+	font-size: clamp(14rem, 30vw, 25rem);
 	letter-spacing: 0.5rem;
 	margin-top: -4rem;
 	text-shadow: 4px 4px 0px #000, -4px 0 0px #000, 7px 4px 0 $gold-details-shadow;
@@ -76,7 +82,7 @@ h1 {
 
 h2 {
 	margin-top: -20rem;
-	font-size: 8rem;
+	font-size: clamp(3rem, 8vw, 7rem);
 	letter-spacing: 0.3rem;
 	text-shadow: 4px 4px 0px #000, -4px 0 0px #000, 7px 4px 0 $gold-details-shadow;
 }
@@ -97,6 +103,14 @@ h5 {
 	font-size: clamp(1.5rem, 4vw, 3rem);
 	text-align: center;
 	letter-spacing: 0.3rem;
+	text-shadow: 2px 2px 0px #000, -2px 0 0px #000, 4px 3px 0 $gold-details-shadow;
+	padding-bottom: 1rem;
+}
+
+h6 {
+	font-size: clamp(1rem, 2.5vw, 3rem);
+	text-align: center;
+	letter-spacing: 0.25rem;
 	text-shadow: 2px 2px 0px #000, -2px 0 0px #000, 4px 3px 0 $gold-details-shadow;
 	padding-bottom: 1rem;
 }
@@ -144,6 +158,7 @@ button {
 	border: solid 1px $gold-details-shadow;
 	border: solid 1px $gold-details-shadow;
 	outline: none;
+	font-size: clamp(1rem, 2vw, 1.5rem);
 	color: $primary-detail-color;
 	background: #000;
 	cursor: url("../assets/icons/wand-cursor.png"), auto;

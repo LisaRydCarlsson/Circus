@@ -43,11 +43,6 @@ const HomePage = () => {
 					handleSelect={handleSelect}
 				/>
 				<Marquee />
-				<div className="events__book-ticket">
-					<h5>BOOK YOUR TICKET HERE</h5>
-					<button className="glow-btn">Select date</button>
-					<button className="glow-btn">Buy your ticket</button>
-				</div>
 				<div className="events__kids">
 					<h3>Kids carnival lanD</h3>
 					<div className="events__kids__img-container">
@@ -155,7 +150,7 @@ const HomePage = () => {
 				</div>
 				<div className="line"></div>
 				<div className="events__book-ticket">
-					<h5>BOOK YOUR TICKET HERE</h5>
+					<h6>BOOK YOUR TICKET HERE</h6>
 					<button className="glow-btn">Select date</button>
 					<button className="glow-btn">Buy your ticket</button>
 				</div>
