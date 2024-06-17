@@ -1,4 +1,4 @@
-@import "src/styling/general.scss";
+@import "../styling/general.scss";
 
 .header {
 	position: absolute;
@@ -26,7 +26,6 @@
 			justify-content: space-evenly;
 			align-items: center;
 			height: 100%;
-			visibility: hidden;
 
 			a {
 				font-size: clamp(1rem, 1.25vw, 1.5rem);
@@ -40,29 +39,6 @@
 				&.active {
 					color: $gold-details-shadow;
 				}
-			}
-
-			&.visible {
-				visibility: visible;
-			}
-		}
-
-		&--left.animate,
-		&--right.animate {
-			visibility: visible;
-			animation: slideDown 2s ease-out forwards;
-		}
-
-		@keyframes slideDown {
-			0% {
-				transform: translateY(-100%);
-				opacity: 0;
-				visibility: visible;
-			}
-			100% {
-				transform: translateY(0);
-				opacity: 1;
-				visibility: visible;
 			}
 		}
 
