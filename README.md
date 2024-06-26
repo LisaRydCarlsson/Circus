@@ -1,5 +1,5 @@
 # The Nöjesfält Extravaganza! 
-# Examination UX/UI Fördjupning
+## Examination UX/UI Fördjupning
 Individuell Examination
 
 ## Bakgrund
